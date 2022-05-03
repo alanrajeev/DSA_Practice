@@ -6,6 +6,6 @@ int main() {
     a = 3.142;
     b = 4.211;
     c = a+b;
-    cout<<fixed<<setprecision(2)<<c<<endl;
+    cout<<fixed <<c<<endl;
 	return 0;
 }
