@@ -5,8 +5,8 @@ void plusMinus(int ar[],int n) {
    int p = 0,m = 0,z = 0;
    for (int i =0;i<n;i++){
        if(ar[i]==0) z++;
-       if(ar[i]<0) m++;
-       if(ar[i]>0) p++;
+       else if(ar[i]<0) m++;
+       else p++;
    } 
    cout<<fixed<<setprecision(6)<<(float)p/n<<endl;
    cout<<fixed<<setprecision(6)<<(float)m/n<<endl;
