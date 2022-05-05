@@ -1,15 +1,9 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
 
 void update(int *a,int *b) {
     // Complete this function 
-    int c,d,op = 1;
-    c = (*a)+(*b);
-    d = (*a)-(*b);
-    *a = c;
-    if (d<0){
-        op = -1;
-    }
-    *b = d*op;
+    *a = *a + *b;
+    *b = abs(*a - 2*(*b));
 }
 
 int main() {
