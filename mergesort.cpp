@@ -1,46 +1,43 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector <int> merge(vector <int> a,vector <int> b){
-    vector <int> c;
-    int i = 0,j = 0;
-    while(i<a.size()&& j<b.size()){
-        if(a[i]<=b[j]){
-            c.push_back(a[i]);
-            i++;            
-        }
-        else{
-            c.push_back(b[j]);
-            j++;
-        }
-    }
-    while (i<a.size()){
-        c.push_back(a[i]);
-        i++;
-    }
-    while (j<b.size()){
-        c.push_back(b[j]);
-        j++;
-    }
-    return c;
+void merge(vector<int>& v, int s, int m, int e){
+    vector<int> b;
+	int i=s, j=m+1;
+	while (i <= m && j <= e) {
+		if (v[i] <= v[j]) {
+			b.push_back(v[i]);
+			i++;
+		}
+		else {
+			b.push_back(v[j]);
+			j++;
+		}
+	}
+	while (i <= m) {
+		b.push_back(v[i]);
+		i++;
+	}
+	while (j <= e) {
+		b.push_back(v[j]);
+		j++;
+	}
+	for (int i = s; i <= e; ++i)
+		v[i] = b[i - s];
 }
 void MergeSort(vector<int>& v, int start, int end) {
 	if (start < end) {
 		int mid = (start + end) / 2;
 		MergeSort(v, start, mid);
 		MergeSort(v, mid + 1, end);
-	vector <int> v1(mid - start + 1);
-	vector <int> v2(end - mid);
-	copy(v.begin() + start, v.begin() +mid+1,v1.begin());
-	copy(v.begin() +mid, v.end(),v2.begin());
-	v = merge(v1,v2);
+        merge(v,start,mid,end);
 	}
 }
 
 int main() {
-    vector <int> g1{7,2,1,8,9};
+    vector <int> g1{7,2,2,1,8,9,1};
     int n = g1.size();
-    MergeSort(g1,0,n);
+    MergeSort(g1,0,n-1);
     for(int i = 0; i<n;i++) {
         cout<<g1[i]<<" ";
     }
