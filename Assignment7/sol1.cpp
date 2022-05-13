@@ -11,14 +11,18 @@ void insert_sort(int n, vector<int> A){
             A[i+1] = min;
             break;
         }
-        if(i==0){
-           A[0]=min; 
-        }
         for(int i=0;i<A.size();i++){
              cout<<A[i]<<" ";
             } 
         cout<<endl;
+        if(i==0){
+           A[0]=min; 
+        }
     }
+    for(int i=0;i<A.size();i++){
+             cout<<A[i]<<" ";
+            } 
+        cout<<endl;
 }
 int main() {
     int n,a;

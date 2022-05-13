@@ -19,11 +19,16 @@ vector<vector<int>> product(vector<vector<int>>A, vector<vector<int>>B){
 }
 
 int main() {
-    int m,p,n,x;
+    int m,p,n,x,o;
     vector<vector<int>> a,b,c;
     cin>>m;
     cin>>n;
+    cin>>o;
     cin>>p;
+    if (n!=o){
+        cout<<"Cannot be multiplied"<<endl;
+        exit(0);
+    }
     for (int i = 0; i < m; i++)
     {
         vector<int> row;

@@ -2,13 +2,24 @@
 using namespace std;
 
 int main() {
-    vector<int> g1;
+    vector<int> v;
     int a;
     for(int i = 0;i<5;i++) {
         cin>>a;
-        g1.push_back(a);
+        v.push_back(a);
     }
-    for(int i = 0; i<g1.size();i++) {
-        cout<<g1.at(i)<<endl;
+    int start = 0,mid,end = v.size();
+    mid = (start+end)/2;
+    vector <int> v1(mid - start + 1);
+	vector <int> v2(end - mid - 1);
+	copy(v.begin() + start, v.begin() +mid+1,v1.begin());
+	copy(v.begin() +mid+1, v.end(),v2.begin());
+    for(int i = 0; i<v1.size();i++) {
+        cout<<v1.at(i)<<" ";
     }
+    cout<<endl;
+    for(int i = 0; i<v2.size();i++) {
+        cout<<v2.at(i)<<" ";
+    }
+    cout<<endl;
 }
