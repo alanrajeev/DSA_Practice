@@ -1,7 +1,6 @@
-#include <bits/stdc++.h>
-using namespace std;
-
- void merge(vector<int>& v, int s, int m, int e){
+class Solution {
+public:
+    void merge(vector<int>& v, int s, int m, int e){
     vector<int> b;
 	int i=s, j=m+1;
 	while (i <= m && j <= e) {
@@ -25,7 +24,7 @@ using namespace std;
 	for (int i = s; i <= e; ++i)
 		v[i] = b[i - s];
 }
-void MergeSort(vector<int>& v, int start, int end) {
+    void MergeSort(vector<int>& v, int start, int end) {
 	if (start < end) {
 		int mid = (start + end) / 2;
 		MergeSort(v, start, mid);
@@ -33,14 +32,9 @@ void MergeSort(vector<int>& v, int start, int end) {
         merge(v,start,mid,end);
 	}
 }
-
-int main() {
-    vector <int> g1{7,2,2,1,8,9,1};
-    int n = g1.size();
-    MergeSort(g1,0,n-1);
-    for(int i = 0; i<n;i++) {
-        cout<<g1[i]<<" ";
+    vector<int> sortArray(vector<int>& nums) {
+        int n = nums.size();
+        MergeSort(nums,0,n-1);
+        return nums;
     }
-    
-    cout<<endl;
-}
+};

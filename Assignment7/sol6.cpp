@@ -14,12 +14,10 @@ vector<int> countingSort(vector<int> A) {
         B[A[i]]++;
     }
     for(int i=0;i<100;i++){
-        if(B[i]!=0){
-            while(B[i]!=0){
-                C[k]=i;
-                B[i]--;
-                k++;
-            }
+        while(B[i]!=0){
+            C[k]=i;
+            B[i]--;
+            k++;
         }
     }
     return C;    
