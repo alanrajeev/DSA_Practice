@@ -56,9 +56,10 @@ string mul(string a,string b){
         }
         if(carry !=0) prod += (carry+'0');
         reverse(prod.begin(),prod.end());
-        for(int k = i;k<n-1;k++){
+        for(int k = i;k<m-1;k++){
             prod += '0';
         }
+        cout<<prod<<'\n';
         for(int k = 0;k<prod.size();k++) cout<<prod[k];
         cout<<endl;
         res = add(res,prod);
@@ -79,7 +80,7 @@ int main(){
         cout<<"wrong answer!2\n";
     }
     else cout<<"Correct 2 You are genius \n";
-    if(mul("321","255")!="81855"){
+    if(mul("234","24")!="5616"){
         cout<<"wrong answer!3\n";
     }
     else cout<<"Correct 3 You are genius \n";
