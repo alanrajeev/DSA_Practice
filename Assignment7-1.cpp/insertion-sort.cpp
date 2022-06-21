@@ -1,14 +1,16 @@
 class Solution {
 public:
-    vector<int> sortArray(vector<int>& A) {
-     int min=0,i;
-    for(int j=0;j<A.size()-1;j++){
-        for(i=j;i<A.size();i++){
-        if(A[j]>A[i]){
-             swap(A[j],A[i]);
-         }
+    vector<int> sortArray(vector<int>& nums) {
+        for(int i=1;i<nums.size();i++)
+        {   
+            for(int j=i-1;j>=0;j--)
+            {
+                if(nums[j]>nums[j+1])
+                {
+                    swap(nums[j],nums[j+1]);
+                }
+            }
         }
-    }
-        return A;
+        return nums;
     }
 };
