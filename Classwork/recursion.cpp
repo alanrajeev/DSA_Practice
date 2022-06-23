@@ -2,8 +2,8 @@
 using namespace std;
 
 void combination(string A,string B){
-    if(A.size()!=0) cout<<A<<endl;
-    if(A.size()>=3){
+    if(A.size()==3){
+        cout<<A<<endl;
         return;
     }
     else{
@@ -14,7 +14,7 @@ void combination(string A,string B){
     }
 }
 int main(){
-    string A="",B="def";
+    string A="",B="afk";
     combination(A,B);
     return 0;
 }

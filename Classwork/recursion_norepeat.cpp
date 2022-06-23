@@ -15,7 +15,7 @@ void combination(string A,string B){
     }
 }
 int main(){
-    string A="",B="def";
+    string A="",B="akf";
     combination(A,B);
     return 0;
 }
