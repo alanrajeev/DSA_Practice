@@ -15,7 +15,7 @@ void recursive(string s, string A)
             if (l[i] == false)
             {
                 l[i] = 1;
-                recursive(s, A + s[i]);
+                recursive(s, A+ s[i]);
                 l[i] = 0;
             }
         }
