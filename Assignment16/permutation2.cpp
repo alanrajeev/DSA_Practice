@@ -11,10 +11,12 @@ public:
             swap(nums[index],nums[i]);
         }
     }
-    vector<vector<int>> permute(vector<int> nums) {
+    vector<vector<int>> permuteUnique(vector<int> nums) {
         vector<vector<int>> ans;
         int index=0;
         recursion(index,nums,ans);
+        sort(ans.begin(),ans.end());
+        ans.erase(unique(ans.begin(),ans.end()),ans.end());
         return ans;
     }
 };
