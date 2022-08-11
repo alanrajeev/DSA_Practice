@@ -1,0 +1,15 @@
+class Solution {
+public:
+    string kthDistinct(vector<string>& arr, int k) {
+        unordered_map<string, int> freq;  
+        for(string x : arr)  freq[x]++;
+        int ans = 0;
+        for(auto x: arr) {
+            if(freq[x] == 1) {
+                ans++;
+                if(ans==k) return x;
+            }      
+        }
+        return "";
+    }
+};
